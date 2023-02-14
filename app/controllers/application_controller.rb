@@ -6,6 +6,15 @@ class ApplicationController < ActionController::Base
 
   http_basic_authenticate_with name: ENV["name"], password: ENV["password"]
 
+  def current_user
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  end
+  helper_method :current_user
+
+  def authorize
+    redirect_to '/login' unless current_user
+  end
+
   private
 
   def cart
