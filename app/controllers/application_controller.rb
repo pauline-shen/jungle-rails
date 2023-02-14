@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   
   protect_from_forgery with: :exception
 
-  http_basic_authenticate_with name: "Jungle", password: "password"
+  http_basic_authenticate_with name: ENV["name"], password: ENV["password"]
 
   private
 
