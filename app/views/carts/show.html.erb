@@ -3,7 +3,8 @@
   <header class="page-header">
     <h1>My Cart</h1>
   </header>
-
+  
+  <% if enhanced_cart.present? %> 
   <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
@@ -48,5 +49,10 @@
       <% end %>
     </div>
   </div>
+  <% else %>
+    <div class="alert alert-secondary" role="alert">
+      Your cart is currently empty! Continue shopping on the <a href="/"> Jungle Homepage</a>. 
+    </div>
+  <% end %>
 
 </section>
