@@ -1,12 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe Product, type: :model do
-  describe 'Validations' do
+  describe "Validations" do
     it "all four fields valid" do
       @product = Product.new
       @category = Category.new
-      @category.name = 'Example'
-      @product.name = 'Test1'
+      @category.name = "Example"
+      @product.name = "Test1"
       @product.price_cents = 111
       @product.quantity = 1
       @product.category = @category
@@ -16,7 +16,7 @@ RSpec.describe Product, type: :model do
     it "name presence" do
       @product = Product.new
       @category = Category.new
-      @category.name = 'Example'
+      @category.name = "Example"
       @product.name = nil
       @product.price_cents = 111
       @product.quantity = 1
@@ -28,7 +28,7 @@ RSpec.describe Product, type: :model do
     it "price_cents presence" do
       @product = Product.new
       @category = Category.new
-      @category.name = 'Example'
+      @category.name = "Example"
       @product.name = "Test3"
       @product.price_cents = nil
       @product.quantity = 1
@@ -40,8 +40,8 @@ RSpec.describe Product, type: :model do
     it "quantity presence" do
       @product = Product.new
       @category = Category.new
-      @category.name = 'Example'
-      @product.name = 'Test1'
+      @category.name = "Example"
+      @product.name = "Test1"
       @product.price_cents = 111
       @product.quantity = nil
       @product.category = @category
@@ -51,7 +51,7 @@ RSpec.describe Product, type: :model do
   
     it "category presence" do
       @product = Product.new
-      @product.name = 'Test1'
+      @product.name = "Test1"
       @product.price_cents = 111
       @product.quantity = 1
       @product.category = nil
